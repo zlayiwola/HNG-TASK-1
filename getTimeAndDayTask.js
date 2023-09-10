@@ -8,11 +8,12 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelector('[data-testid="currentDayOfTheWeek"]').textContent = `Current Day: ${currentDayOfTheWeek}`;
 
     // Current UTC Time
-    const currentUTCTime = new Date().getTime();
-    document.querySelector('[data-testid="currentUTCTime"]').textContent = `Current UTC Time: ${currentUTCTime} milliseconds`;
-
-    // GitHub URL
-    const githubURL = "https://github.com/yourusername/your-repo";
-    const githubLink = document.querySelector('[data-testid="githubURL"]');
-    githubLink.href = githubURL;
+    function updateUTCTime() {
+        const currentUTCTime = new Date().getTime();
+        const utcTimeElement = document.querySelector('[data-testid="currentUTCTime"]');
+        utcTimeElement.textContent = `Current UTC Time: ${currentUTCTime} milliseconds`;
+    }
+    
+    // Update the UTC time every 1000 milliseconds (1 second)
+    setInterval(updateUTCTime, 1000);
 });

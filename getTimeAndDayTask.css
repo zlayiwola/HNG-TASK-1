@@ -1,8 +1,10 @@
+/* removing the default padding and margin */
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+/* the body style */
 body {
     font-family: Arial, sans-serif;
     text-align: center;
@@ -10,7 +12,7 @@ body {
     margin: 0;
     padding: 0;
 }
-
+/* the conatiner style */
 .container {
     max-width: 500px;
     margin: 0 auto;
@@ -19,17 +21,12 @@ body {
     border-radius: 5px;
     background-color: #fff;
 }
-p.slackUserName{
-    padding-bottom: 20px;
-}
-
-p[data-testid="currentUTCTime"], p[data-testid="currentDayOfTheWeek"], p[data-testid="myTrack"] {
-    padding-bottom: 15px;
-}
+/* styling the header */
 h1 {
     margin-bottom: 20px;
 }
 
+/* styling the image */
 img {
     height: 200px;
     width: 200px;
@@ -37,6 +34,18 @@ img {
     margin-bottom: 20px;
 }
 
+/* styling the paragraphs using their data-testid */
+p[data-testid="slackUserName"], p[data-testid="currentUTCTime"], p[data-testid="currentDayOfTheWeek"], p[data-testid="myTrack"] {
+    padding-bottom: 15px;
+}
+p[data-testid="slackUserName"]::before {
+    content: "User Name: ";
+}
+p[data-testid="myTrack"]::before {
+    content: "Slack Track: "
+}
+
+/* styling the anchor tag */
 a {
     text-decoration: none;
     color: #0073e6;
